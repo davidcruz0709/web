@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Invitación de baby shower </title>
+  <link rel="stylesheet" href="stilo.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="fade-in">¡INVITACION ESPECIAL A NUESTRO!</h1>
+    <p class="fade-in delay">¡BABY SHOWER!</p>
+    <p class="fade-in delay">Queridos familiares y amigos:
+      ¡Gracias por acompañarnos en este día tan especial! Hoy celebramos con alegría y mucho amor la llegada de un nuevo integrante a nuestra familia. Cada uno de ustedes forma parte importante de nuestras vidas, y compartir este momento con ustedes lo hace aún más inolvidable.
+      Disfruten de la comida, los juegos, las sorpresas… ¡y sobre todo del cariño que nos une! Este bebé ya es muy afortunado por contar con una comunidad tan maravillosa como ustedes.
+      ¡Bienvenidos y que comience la celebración!
+      Con cariño,
+      [CINDY Y SERGIO]
+      
+    </p>
+    <audio id="musicaFondo" autoplay loop>
+      <source src="musica/yo te esperaba 2.0.unknown" type="audio/mpeg">
+      Tu navegador no soporta audio HTML5.
+    </audio>
+    
+    <script>
+      document.addEventListener('click', () => {
+        const audio = document.getElementById('musicaFondo');
+        if (audio && audio.paused) {
+          audio.volume = 1.0; // volumen máximo
+          audio.play();
+        }
+      }, { once: true });
+    </script>
+    
+   
+    
+    <div class="imagen-con-texto fade-in delay-2">
+      <img src="imagen de la tarjeta/Diseño sin título.png" alt="Imagen del evento" />
+      <div class="texto-sobre-imagen">
+        <div class="cuenta-regresiva">
+           
+          </div>
+      <h2>BABY SHOWER</h2>
+      <p>Fecha: <span id="fecha-evento">10 de MAYO de 2025</span></p>
+      <p>Lugar: <span>EL TAMBO, LA UNIÒN</span></p>
+    </div>
+</div>
+<h3>Faltan:</h3>
+<div id="reloj"></div>
+<div class="reloj-circular">
+  <div class="unidad">
+    <svg><circle cx="50" cy="50" r="45"></circle></svg>
+    <div class="valor" id="dias">0</div>
+    <div class="etiqueta">Días</div>
+  </div>
+  <div class="unidad">
+    <svg><circle cx="50" cy="50" r="45"></circle></svg>
+    <div class="valor" id="horas">0</div>
+    <div class="etiqueta">Horas</div>
+  </div>
+  <div class="unidad">
+    <svg><circle cx="50" cy="50" r="45"></circle></svg>
+    <div class="valor" id="minutos">0</div>
+    <div class="etiqueta">Minutos</div>
+  </div>
+  <div class="unidad">
+    <svg><circle cx="50" cy="50" r="45"></circle></svg>
+    <div class="valor" id="segundos">0</div>
+    <div class="etiqueta">Segundos</div>
+  </div>
+</div>
+
+
+
+    <div class="botones fade-in delay-4">
+      <button onclick="window.location.href='https://maps.app.goo.gl/VjkS6gES3B67Bb9K8'">
+        <span class="icono-ubicacion">
+          <!-- Ícono SVG de ubicación -->
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" viewBox="0 0 16 16">
+            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zM8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+          </svg>
+        </span>
+        Ver Ubicación
+      </button>
+      
+      <h1 class="fade-in">¡MI MAMI CINDY Y MI PAPI SERGIO!</h1>
+      <p class="fade-in delay">LOS AGRADECE DE ANTE MANO</p>
+      <p class="fade-in delay">POR ESTE BEBÈ
+        ORABA Y DIOS ME 
+        HA PROCECIDO LA 
+        PETICIÒN QUE LE 
+        HICE.
+        SAMUEL 1:17
+</p>
+    </div>
+  </div>
+  <a href="https://wa.me/51970327124?text=Hola%20%22Yo.........%22%20confirmo%20mi%20asistencia%20en%20el%20baby%20shower%20y%20revelación%20de%20género%20de%20tu%20bebé" target="_blank">
+    <button style="background-color: #25D366; color: white; padding: 10px 20px; border: none; border-radius: 8px; font-size: 16px;">
+      Confirmar asistencia por WhatsApp
+    </button>
+  </a>
+  <h2>¿Qué crees que será?</h2>
+
+  <div style="display: flex; gap: 20px; margin-bottom: 20px;">
+    <button onclick="votar('niño')" style="padding: 10px 20px; background-color: #2196F3; color: white; border: none; border-radius: 10px; font-size: 16px;">
+      👦 Niño
+    </button>
+    <button onclick="votar('niña')" style="padding: 10px 20px; background-color: #E91E63; color: white; border: none; border-radius: 10px; font-size: 16px;">
+      👧 Niña
+    </button>
+  </div>
+  
+  <div id="insignia" style="font-size: 50px; text-align: center;"></div>
+  
+  <div id="resultados" style="margin-top: 20px;">
+    <p>👦 Niño: <span id="porcentajeNiño">0%</span></p>
+    <p>👧 Niña: <span id="porcentajeNiña">0%</span></p>
+  </div>
+  <script>
+    let votos = { niño: 0, niña: 0 };
+  
+    function votar(opcion) {
+      votos[opcion]++;
+      mostrarInsignia(opcion);
+      actualizarPorcentajes();
+    }
+  
+    function mostrarInsignia(opcion) {
+      const insignia = opcion === 'niño' ? '♂️' : '♀️';
+      document.getElementById('insignia').innerText = insignia;
+    }
+  
+    function actualizarPorcentajes() {
+      const total = votos.niño + votos.niña;
+      const porcentajeNiño = total ? ((votos.niño / total) * 100).toFixed(1) : 0;
+      const porcentajeNiña = total ? ((votos.niña / total) * 100).toFixed(1) : 0;
+  
+      document.getElementById('porcentajeNiño').innerText = `${porcentajeNiño}%`;
+      document.getElementById('porcentajeNiña').innerText = `${porcentajeNiña}%`;
+    }
+  </script>
+      
+
+  <script src="script.js"></script>
+</body>
+</html>
