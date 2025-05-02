@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #81d4fa 50%, #f8bbd0 50%);
+    text-align: center;
+    color: #333;
+    padding: 5rem;
+  }
+  
+  .imagen-con-texto {
+    position: relative;
+    width: 100%;
+    max-width: 1550px;     /* Más ancho si deseas */
+    max-height: 1150px;    /* Aumentado para que se vea más grande */
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .imagen-con-texto img {
+    width: 100%;
+    height: 100%;          /* Esto hace que la imagen llene toda la altura */
+    object-fit: cover;     /* Recorta y ajusta sin deformar */
+    border-radius: 15px;
+  }
+  
+  .texto-sobre-imagen {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
+    color: white;
+    width: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+    text-align: center;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+  .reloj-circular {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 2rem;
+  }
+  
+  .unidad {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+  }
+  
+  .unidad svg {
+    width: 100px;
+    height: 100px;
+    transform: rotate(-90deg);
+  }
+  
+  .unidad circle {
+    fill: none;
+    stroke:hsl(215, 100%, 63%);
+    stroke-width: 10;
+    stroke-dasharray: 283;
+    stroke-dashoffset: 0;
+    transition: stroke-dashoffset 0.5s ease;
+  }
+  
+  .valor {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #181a22f2;
+  }
+  
+  .etiqueta {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    font-size: 0.9rem;
+    color: #555;
+  }
+  .icono-ubicacion {
+    vertical-align: middle;
+    margin-right: 8px;
+  }
+  body {
+    font-family: 'Poppins', sans-serif;
+  }
+  h1, h2 {
+    font-family: 'Lobster', cursive;
+  }
+  
+  p {
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
